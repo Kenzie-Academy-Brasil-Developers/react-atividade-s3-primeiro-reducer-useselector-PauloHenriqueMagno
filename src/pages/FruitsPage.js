@@ -6,9 +6,12 @@ const FruitsPage = () => {
   const fruits = useSelector(state => state.fruits);
 
   return (
-    <div>
+    <div className="fruit_list">
       {fruits.map((fruit) => (
-        <p key={fruit}> {fruit} </p>
+        <div key={fruit.name} className="fruit">
+          <img src={fruit.image} alt={fruit.name}/> 
+          <p>{fruit.name}</p>
+        </div>
       ))}
     </div>
   );
